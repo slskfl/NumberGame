@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 //                comNum=(int)Math.random()+100;
                 comNum=random.nextInt(100)+1;
                 ivGame.setImageResource(R.drawable.updown);
+                btnResult.setEnabled(true);
+                btnStart.setEnabled(false);
             }
         });
         btnResult.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +55,10 @@ public class MainActivity extends AppCompatActivity {
                 }else if(myNum==comNum){
                     tvHint.setText("맞추셨습니다!  >> "+count+"회");
                     ivGame.setImageResource(R.drawable.conc);
+                    btnResult.setEnabled(false);
+                    btnStart.setEnabled(true);
                 }
+                edNum.setHint(edNum.getText().toString());
             }
         });
     }
